@@ -1,10 +1,18 @@
-import { Button } from "@mui/material";
-import "./App.css";
+import { Login } from "views/login";
+import { Register } from "views/register";
+import "./App.scss";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Button variant="contained">你好，世界</Button>
+    <div id="app">
+      <Router>
+        <Routes>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route index element={<Login></Login>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

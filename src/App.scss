@@ -1,0 +1,12 @@
+@import './assets/scss/variable.scss';
+
+html {
+  /*1rem === 10px*/
+  font-size: 62.5%;
+  color: $color-title-first;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
