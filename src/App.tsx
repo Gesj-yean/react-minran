@@ -1,6 +1,6 @@
 import { Login } from "views/login";
 import { Register } from "views/register";
-import "./App.scss";
+import "./App.less";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

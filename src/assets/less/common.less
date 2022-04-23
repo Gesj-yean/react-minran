@@ -1,0 +1,39 @@
+@arr: 4, 8, 12, 16, 24, 32, 48;
+
+each(@arr, {
+  @num:extract(@arr, @index);
+  .mgt-@{value} {
+    margin-top:~"@{num}px";
+  }
+  .mgr-@{value} {
+    margin-right:~"@{num}px";
+  }
+  .mgb-@{value} {
+    margin-bottom:~"@{num}px";
+  }
+  .mgl-@{value} {
+    margin-left:~"@{num}px";
+  }
+  .pdt-@{value} {
+    padding-top:~"@{num}px";
+  }
+  .pdr-@{value} {
+    padding-right:~"@{num}px";
+  }
+  .pdb-@{value} {
+    padding-bottom:~"@{num}px";
+  }
+  .pdl-@{value} {
+    padding-left:~"@{num}px";
+  }
+});
+
+each(@arr, {
+    @num:extract(@arr, @index);
+    .mg-@{value} {
+      margin:~"@{num}px";
+    }
+    .pd-@{value} {
+      padding:~"@{num}px";
+    }
+  });
