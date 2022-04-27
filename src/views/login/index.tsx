@@ -6,6 +6,7 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { showToast } from "utils/showToast";
+import { api } from "api/login";
 
 export const Login = () => {
   const [loginForm, setLoginForm] = useState({
@@ -22,6 +23,20 @@ export const Login = () => {
     } else {
       showToast("登录成功！");
     }
+  };
+
+  const onLogin = () => {
+    api
+      .login({
+        user: loginForm.userName,
+        password: loginForm.password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        showToast("登录失败");
+      });
   };
 
   useEffect(() => {
@@ -58,9 +73,11 @@ export const Login = () => {
             />
           </Form.Item>
           <FlexBetween>
-            <Button type="link" className="link">
-              忘记密码？
-            </Button>
+            <Link to={"/reset"}>
+              <Button type="link" className="link">
+                忘记密码？
+              </Button>
+            </Link>
             <Link to={"/register"}>
               <Button type="link" className="link">
                 立即注册
@@ -75,6 +92,7 @@ export const Login = () => {
               block
               htmlType="submit"
               disabled={isLoginDisable}
+              onClick={onLogin}
             >
               登录
             </Button>
