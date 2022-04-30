@@ -3,12 +3,13 @@ import { LargeTitle } from "components/large-title";
 import IconWx from "assets/img/icon_wx.png";
 import IconZfb from "assets/img/icon_zfb.png";
 import { Button, Checkbox, Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { showToast } from "utils/showToast";
 import { api } from "api/login";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     userName: "",
     password: "",
@@ -33,6 +34,7 @@ export const Login = () => {
       })
       .then((res) => {
         console.log(res);
+        navigate("/home");
       })
       .catch((e) => {
         showToast("登录失败");

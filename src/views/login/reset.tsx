@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "api/login";
 
 export const ResetPass = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     userName: "",
     validCode: "",
