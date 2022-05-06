@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { css } from "assets/css/variable";
-import { GlobalSearch } from "components/global-search";
 import { Message } from "components/message";
 import { TabBar } from "components/tab-bar";
 import { HomeHeader } from "./components/home-header";
@@ -9,6 +8,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "api/home";
 import { useGetQueryParam, useMount } from "utils";
+import iconSearch from "assets/img/icon_search.png";
 
 export type HeaderType = "recommend" | "follow";
 
@@ -21,6 +21,9 @@ export const Home = () => {
     navigate(`/home?tab=${type}`);
     setCurrentPage(type);
     getList({ type, page: 1, pageSize: 100 });
+  };
+  const goSeachPage = () => {
+    navigate(`search?tab=${tab}`);
   };
   const getList = (prams: {
     type: HeaderType;
@@ -43,7 +46,11 @@ export const Home = () => {
           current={currentPage as "recommend"}
           onSelect={onSelect}
         ></HomeHeader>
-        <GlobalSearch></GlobalSearch>
+        {/* <GlobalSearch></GlobalSearch> */}
+        <SearchWrapper onClick={() => goSeachPage()}>
+          <img src={iconSearch} alt="" className="mgr-4" />
+          <div>搜索你感兴趣的内容</div>
+        </SearchWrapper>
         <MessageWrapper>
           {list.map((item) => (
             <Message
@@ -70,4 +77,12 @@ const RecommendContent = styled.div`
 `;
 const MessageWrapper = styled.div`
   padding: 16px 0;
+`;
+const SearchWrapper = styled.div`
+  background-color: ${css.colorWhite};
+  color: ${css.colorTitleThird};
+  padding: 12px 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  display: flex;
 `;
