@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { LeftOutlined } from "@ant-design/icons";
 import BgTitle from "../assets/img/bg_title.png";
 import { backPage } from "utils/utils";
+import { css } from "assets/css/variable";
 
 interface LargeTitleProps {
   title: string;
@@ -32,7 +33,7 @@ const TitleWrapper = styled.div`
   padding: 32px 16px;
 
   .title {
-    font-size: 1.6rem;
+    font-size: ${css.fontSizeBig};
     font-weight: bold;
   }
 `;

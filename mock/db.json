@@ -1,10 +1,27 @@
 {
   "login": {
     "user": "15558790326",
-    "password": "2"
+    "password": "1"
   },
   "register": {
     "user": "15558790326",
     "password": "2"
-  }
+  },
+  "homeList": [
+    {
+      "id": 1,
+      "avatar": "",
+      "userName": "奶香桉树叶",
+      "title": "鲁迅体emo文案，狠狠破防了",
+      "content": "我大抵是倦了，横竖都起不来，屋外的风声犹",
+      "tag": [
+        "#鲁迅体文案#"
+      ],
+      "likeNum": 123,
+      "commentNum": 123,
+      "isLike": true,
+      "isFollow": true,
+      "isStar": true
+    }
+  ]
 }

@@ -13,8 +13,9 @@ export const css = {
   colorDevide: "#E8E8E8",
   colorBackground: "#F5F6F9",
 
-  fontSize: "0.875rem",
-  fontSizeLarge: "0.8rem",
-  fontSizeSmall: "0.6rem",
-  fontSizeMini: "0.5rem",
+  fontSizeSmall: "12px",
+  fontSize: "14px",
+  fontSizeBig: "16px",
+  fontSizeTitle: "18px",
+  fontSizeLarge: "32px",
 };

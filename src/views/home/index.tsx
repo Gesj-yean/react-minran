@@ -1,19 +1,13 @@
 import styled from "@emotion/styled";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Recommend } from "./recommend";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./home";
 
-export const Home = () => {
+export const HomeIndex = () => {
   return (
     <HomeWrapper>
-      <div>111</div>
-
-      {/* <BrowserRouter>
-      <div>111</div>
       <Routes>
-        <Route path="recommend" element={<Recommend></Recommend>}></Route>
-        <Route index element={<Recommend></Recommend>}></Route>
+        <Route index element={<Home></Home>}></Route>
       </Routes>
-    </BrowserRouter> */}
     </HomeWrapper>
   );
 };
