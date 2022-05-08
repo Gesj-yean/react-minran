@@ -14,7 +14,7 @@ export const PageTitle = (props: { title: string }) => {
         <div className="back-icon" onClick={backPage}>
           <LeftOutlined />
         </div>
-        <div>{props.title}</div>
+        <div className="title">{props.title}</div>
       </div>
     </PageTitleWrapper>
   );
@@ -25,18 +25,23 @@ const PageTitleWrapper = styled.div`
   height: 87.5px;
   width: 100%;
   position: relative;
+  border: solid 1px ${css.colorDevide};
+  text-align: center;
 
   .content {
     position: absolute;
     bottom: 10px;
     width: 100%;
-    text-align: center;
 
     .back-icon {
       position: absolute;
       left: 6px;
       bottom: -10px;
       padding: 10px;
+    }
+
+    .title {
+      font-weight: bold;
     }
   }
 `;

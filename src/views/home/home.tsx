@@ -46,7 +46,6 @@ export const Home = () => {
           current={currentPage as "recommend"}
           onSelect={onSelect}
         ></HomeHeader>
-        {/* <GlobalSearch></GlobalSearch> */}
         <SearchWrapper onClick={() => goSeachPage()}>
           <img src={iconSearch} alt="" className="mgr-4" />
           <div>搜索你感兴趣的内容</div>

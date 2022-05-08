@@ -7,6 +7,7 @@ import iconLikeLight from "assets/img/icon_like_light.png";
 import iconStar from "assets/img/icon_star.png";
 import iconStarLight from "assets/img/icon_star_light.png";
 import { HeaderType } from "views/home/home";
+import { useNavigate } from "react-router-dom";
 
 interface MessageProp {
   info: MessageType;
@@ -14,6 +15,7 @@ interface MessageProp {
 }
 
 export const Message = ({ info, current }: MessageProp) => {
+  const navigate = useNavigate();
   const MessageState = () => {
     return current === "recommend" ? (
       info.isFollow ? (
@@ -26,6 +28,9 @@ export const Message = ({ info, current }: MessageProp) => {
     ) : (
       <img src={iconStar} alt="" />
     );
+  };
+  const handleCommend = () => {
+    navigate("pay");
   };
   return (
     <MessageWrapper>
@@ -47,7 +52,7 @@ export const Message = ({ info, current }: MessageProp) => {
           ))}
         </div>
         <div className="function-wrapper">
-          <div className="flex">
+          <div className="flex" onClick={() => handleCommend()}>
             <img src={iconComment} alt="" />
             {info.commentNum}
           </div>
