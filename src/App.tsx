@@ -10,8 +10,8 @@ function App() {
     <div id="app">
       <Router>
         <Routes>
-          <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/reset" element={<ResetPass></ResetPass>}></Route>
           <Route path="/home/*" element={<HomeIndex></HomeIndex>}></Route>
           <Route index element={<Login></Login>}></Route>
