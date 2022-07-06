@@ -10,4 +10,5 @@ export interface MessageType {
   isLike: boolean;
   isFollow: boolean;
   isStar: boolean;
+  createTime: string;
 }

@@ -8,6 +8,7 @@ import iconStar from "assets/img/icon_star.png";
 import iconStarLight from "assets/img/icon_star_light.png";
 import { HeaderType } from "views/home/home";
 import { useNavigate } from "react-router-dom";
+import { Avatar } from "antd";
 
 interface MessageProp {
   info: MessageType;
@@ -32,11 +33,14 @@ export const Message = ({ info, current }: MessageProp) => {
   const handleCommend = () => {
     navigate("pay");
   };
+  const handleDetail = () => {
+    navigate(`detail/${info.id}`);
+  };
   return (
-    <MessageWrapper>
+    <MessageWrapper onClick={() => handleDetail()}>
       <div className="info-header">
         <div className="left">
-          <img src="" alt="" />
+          <Avatar src="https://joeschmoe.io/api/v1/random" />
           <div>{info.userName}</div>
         </div>
         {<MessageState></MessageState>}

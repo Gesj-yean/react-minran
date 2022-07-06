@@ -28,7 +28,7 @@ export const HomeHeader = ({
 };
 
 const HomeHeaderWrapper = styled.div`
-  padding: 52px 0 20px;
+  padding: 52px 0 24px;
   font-size: ${css.fontSizeTitle};
   div {
     display: inline-block;
